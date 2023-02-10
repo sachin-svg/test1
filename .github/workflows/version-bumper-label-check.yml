@@ -1,0 +1,17 @@
+name: Example Workflow1
+
+on:
+  pull_request:
+    types: [opened, labeled, unlabled]
+    branches: [master* , main*]
+
+jobs:
+  check-labels:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Run a command
+      run: echo "Hello, world!"
